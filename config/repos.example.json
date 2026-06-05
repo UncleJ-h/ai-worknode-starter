@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Model Context Protocol Servers",
+    "repo": "modelcontextprotocol/servers"
+  },
+  {
+    "name": "OpenAI Agents JS",
+    "repo": "openai/openai-agents-js"
+  }
+]

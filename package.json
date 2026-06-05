@@ -1,0 +1,25 @@
+{
+  "name": "ai-worknode-starter",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "A small starter kit for turning a Linux VPS into a personal AI work node.",
+  "scripts": {
+    "health": "bash scripts/health-check.sh",
+    "rss": "node apps/rss-digest/index.mjs",
+    "github": "node apps/github-watch/index.mjs",
+    "check": "npm run health && npm run rss && npm run github"
+  },
+  "keywords": [
+    "ai",
+    "vps",
+    "automation",
+    "mcp",
+    "rss",
+    "github-watch"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  }
+}
