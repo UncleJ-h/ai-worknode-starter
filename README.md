@@ -41,7 +41,7 @@ ai-worknode-starter/
 
 ## Quick start
 
-On a fresh Debian/Ubuntu server:
+On a fresh Debian/Ubuntu server with Node.js 18+:
 
 ```bash
 git clone https://github.com/UncleJ-h/ai-worknode-starter.git
