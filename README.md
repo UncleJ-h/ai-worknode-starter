@@ -1,18 +1,40 @@
 # AI Worknode Starter
 
-A small starter kit for turning a fresh Linux VPS into a personal AI work node.
+Give your AI agents a place to work while your laptop sleeps.
 
-This project is intentionally boring:
+`ai-worknode-starter` turns a fresh Linux VPS into a small personal AI
+infrastructure node: one place for background jobs, logs, scheduled checks, and
+lightweight agent workflows.
 
-- install common runtime tools
-- run a health check
-- fetch RSS feeds into markdown logs
-- watch GitHub releases/commits into markdown logs
-- provide systemd examples for long-running jobs
+It is not a giant agent framework. It is the boring execution layer underneath
+one:
+
+- bootstrap a server
+- verify the runtime
+- pull RSS feeds into markdown
+- watch GitHub projects
+- keep jobs running with systemd timers
+- leave outputs that a human or LLM can inspect
 
 It does not bypass platform rules, automate account abuse, or promise that any
 IP type prevents risk checks. Treat a VPS as infrastructure for stable,
 long-running work, not as a magic safety switch.
+
+## The idea
+
+Your laptop is the cockpit. The work node is the execution layer.
+
+```text
+local machine                    AI work node
+-------------                    ------------
+think, prompt, review      ->    run scheduled jobs
+edit code and config       ->    write logs and reports
+approve actions            ->    watch feeds and repos
+change direction           ->    stay online after logout
+```
+
+If your AI workflow needs uptime, logs, repeatability, or a stable remote
+environment, it probably belongs on a work node.
 
 ## Why this exists
 
@@ -27,6 +49,24 @@ for background AI workflows:
 
 A work node gives your AI workflows a small, always-on execution layer.
 
+## Demo output
+
+After a clean run:
+
+```bash
+npm run check
+```
+
+you should have markdown files like this:
+
+```text
+worknode-data/
+  rss-digest.md       # fresh feed items for review or LLM summarization
+  github-watch.md     # repo stars, issues, and recent commits
+```
+
+See [docs/demo-output.md](docs/demo-output.md) for a short example.
+
 ## What you get
 
 ```text
@@ -36,6 +76,7 @@ ai-worknode-starter/
   apps/rss-digest/             # RSS to markdown log
   apps/github-watch/           # GitHub repo watch to markdown log
   config/                      # example config files
+  docs/                        # demo output and workflow ideas
   systemd/                     # example user services/timers
 ```
 
@@ -66,6 +107,19 @@ worknode-data/
   rss-digest.md
   github-watch.md
 ```
+
+## What to build on it
+
+Start with small workflows that are useful even before you add an LLM:
+
+- daily AI news digest
+- GitHub release and commit watcher
+- Telegram or Discord alert bot
+- lightweight MCP server host
+- scheduled markdown reports
+- remote Claude Code / Codex helper workspace
+
+See [docs/workflows.md](docs/workflows.md) for concrete workflow ideas.
 
 ## Configure feeds and repos
 

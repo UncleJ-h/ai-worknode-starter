@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": false,
   "type": "module",
-  "description": "A small starter kit for turning a Linux VPS into a personal AI work node.",
+  "description": "A small AI infrastructure starter kit for turning a Linux VPS into a personal work node.",
   "scripts": {
     "health": "bash scripts/health-check.sh",
     "rss": "node apps/rss-digest/index.mjs",
@@ -12,6 +12,9 @@
   },
   "keywords": [
     "ai",
+    "ai-infrastructure",
+    "agent",
+    "worknode",
     "vps",
     "automation",
     "mcp",
